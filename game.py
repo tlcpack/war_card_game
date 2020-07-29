@@ -75,6 +75,16 @@ def game(player, opponent):
     print("Welcome to war!")
     time.sleep(2)
     print(f"Player has {num_player_cards}. Opponent has {num_opp_cards}")
+    time.sleep(2)
+    print("Press enter when ready to draw")
+    input()
+
+    if all_cards_dict.get(player[0]) > all_cards_dict.get(opponent[0]):
+        print("P: " + str(player[0]) + ", O: " + str(opponent[0]))
+        print("Win")
+    else:
+        print("P: " + str(player[0]) + ", O: " + str(opponent[0]))
+        print("lose")
 
 game(player_deck, opp_deck)
     
