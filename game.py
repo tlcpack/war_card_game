@@ -82,9 +82,11 @@ def game(player, opponent):
     if all_cards_dict.get(player[0]) > all_cards_dict.get(opponent[0]):
         print("P: " + str(player[0]) + ", O: " + str(opponent[0]))
         print("Win")
+        # pop(0) from front of opp list, append that to player list
     else:
         print("P: " + str(player[0]) + ", O: " + str(opponent[0]))
         print("lose")
+        # pop(0) from front of player list, append that to opp list
 
 game(player_deck, opp_deck)
     
