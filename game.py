@@ -77,6 +77,7 @@ def game(player, opponent):
         opponent.pop(0)
     else:
         print("P: " + str(player[0]) + ", O: " + str(opponent[0]))
+        print("Lose")
         opponent.append(player[0])
         player.pop(0)
 
