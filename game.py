@@ -69,15 +69,6 @@ opp_deck = all_cards_list[26:52]
 #     print("lose")
 
 def game(player, opponent):
-    num_player_cards = len(player)
-    num_opp_cards = len(opponent)
-    
-    print("Welcome to war!")
-    time.sleep(2)
-    print(f"Player has {num_player_cards}. Opponent has {num_opp_cards}")
-    time.sleep(2)
-    print("Press enter when ready to draw")
-    input()
 
     if all_cards_dict.get(player[0]) > all_cards_dict.get(opponent[0]):
         print("P: " + str(player[0]) + ", O: " + str(opponent[0]))
@@ -89,5 +80,14 @@ def game(player, opponent):
         opponent.append(player[0])
         player.pop(0)
 
+num_player_cards = len(player_deck)
+num_opp_cards = len(opp_deck)
+    
+print("Welcome to war!")
+time.sleep(2)
+print(f"Player has {num_player_cards}. Opponent has {num_opp_cards}")
+time.sleep(2)
+print("Press enter when ready to draw")
+input()
 game(player_deck, opp_deck)
     
