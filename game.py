@@ -58,8 +58,8 @@ all_cards_dict = {
 all_cards_list = list(all_cards_dict.keys())
 random.shuffle(all_cards_list)
 
-player_deck = all_cards_list[0:26]
-opp_deck = all_cards_list[26:52]
+player_deck = all_cards_list[0:5]
+opp_deck = all_cards_list[5:10]
 
 # print(all_cards_dict.get(player_deck[0]))
 # print(all_cards_dict.get(opp_deck[0]))
@@ -69,17 +69,23 @@ opp_deck = all_cards_list[26:52]
 #     print("lose")
 
 def game(player, opponent):
-
-    if all_cards_dict.get(player[0]) > all_cards_dict.get(opponent[0]):
-        print("P: " + str(player[0]) + ", O: " + str(opponent[0]))
-        print("Win")
-        player.append(opponent[0])
-        opponent.pop(0)
-    else:
-        print("P: " + str(player[0]) + ", O: " + str(opponent[0]))
-        print("Lose")
-        opponent.append(player[0])
-        player.pop(0)
+    while len(player) > 0 and len(opponent) > 0:
+        if all_cards_dict.get(player[0]) > all_cards_dict.get(opponent[0]):
+            print("P: " + str(player[0]) + ", O: " + str(opponent[0]))
+            print("Win")
+            player.append(opponent[0])
+            player.append(player[0])
+            opponent.pop(0)
+            player.pop(0)
+            time.sleep(1)
+        else:
+            print("P: " + str(player[0]) + ", O: " + str(opponent[0]))
+            print("Lose")
+            opponent.append(player[0])
+            opponent.append(opponent[0])
+            player.pop(0)
+            opponent.pop(0)
+            time.sleep(1)
 
 num_player_cards = len(player_deck)
 num_opp_cards = len(opp_deck)
